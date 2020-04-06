@@ -17,10 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-    Route::get('/trial', function() {
-        return view('trial');
-    });
-    Route::get('/form',function(){
+   
+   Route::get('/form',function(){
         return view('form');
     });
 
@@ -30,5 +28,17 @@ Route::view('login','userform');
  Route::post('submit','UserForm@submit');
 
 
-Route::get('db','dataController@checkDB');
-Route::get('db1','pracController@checkDB1');
+Route::view('/form','companyform');
+Route::post('submit','Companies@save');
+
+Route::view('/empform','employform');
+Route::post('submit','Userss@index');
+
+Route::view('/display','usersview');
+Route::post('/update','usersvieww@update');
+
+Route::view('/delete','usersdelete');
+Route::post('/del','usersdel@delete');
+
+
+
